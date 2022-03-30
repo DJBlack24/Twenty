@@ -154,30 +154,55 @@ do {
     var h = 0;
     var c = 0;
 
+    function askname() {
+        var name = prompt(" Hello! \n What is you name.")
+        return name
+    
+    }
+    
+    function greeting(a) {   // parameter
+        alert(`Welcome, ${a}.`)
+    }
+    
+    greeting(askname()) // argument
+
     alert(" Welcome to 20! The rules are simple, In this game you will have to draw a number and get as close as you can to the number 20. If you go over the number 20 you will lose. You are going up against me. \n You will be drawing a number between 1 to 10. I will some around 16. \n Make sure you think and pay attention to make sure you dont go over the amount of 20.");
 
-    do {
+    function computerfn() {
+        do {
 
-        var r = Math.floor(Math.random() * 10) + 1
+            var r = Math.floor(Math.random() * 10) + 1
 
-        c = c + r
+            c = c + r
 
-        alert(`Computer new number is ${r}. Computer new total is ${c}.`)
+            computeralertfn = alert(`Computer new number is ${r}. Computer new total is ${c}.`)
 
 
-    } while ( c < 16)
+        } while ( c < 16)
+
+        return computeralertfn
+    }
+
+    computerfn() // invoke
 
     alert(`It is now your turn. \n \n Computer total is ${c}.`)
 
-    do {
 
-        var rh = Math.floor(Math.random() * 10) + 1
+    function playerfn() {
+        do {
 
-        h = h + rh
+            var rh = Math.floor(Math.random() * 10) + 1
 
-        var hp = prompt(`Your number was ${rh}. \n Your total is ${h}. \n Do you want to get another number? y = yes n = no`)
+            h = h + rh
 
-    } while ( hp != "n" ( hp > 20 ) )
+            var hp = prompt(`Your number was ${rh}. \n Your total is ${h}. \n Do you want to get another number? y = yes n = no`)
+
+        } while ( hp != "n" ( hp > 20 ) )
+
+        
+    }
+
+    playerfn() // invoke
 
     if ( c > 20 ) {
 
